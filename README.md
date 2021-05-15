@@ -16,3 +16,6 @@
 
 
 ![alt tag](https://github.com/sergiocamara/g2_virtualization/blob/main/Arquitectura-hadoop-cluster-pig-docker.jpg)
+
+### Vídeo de la ejecución
+https://youtu.be/EmdKFAn84-A
