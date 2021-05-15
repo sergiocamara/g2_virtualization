@@ -3,6 +3,7 @@
 # create input files 
 mkdir input
 
+# process image
 cat ~/img.txt | python3 ~/img_parser.py > ~/input/img_parsed.txt
 
 # create input directory on HDFS
