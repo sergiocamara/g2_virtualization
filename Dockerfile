@@ -2,10 +2,9 @@ FROM ubuntu:18.04
 
 WORKDIR /root
 
-# install openssh-server, openjdk and wget
-#RUN apt-get update && apt-get install -y openssh-server openjdk-8-jdk wget
+# install openssh-server, openjdk-8 and wget
 RUN apt-get update &&\
-    apt-get -y install openjdk-8-jdk openssh-server wget vim 
+    apt-get -y install openjdk-8-jdk openssh-server wget  
     
 
 # install hadoop 2.10.1
@@ -50,15 +49,15 @@ RUN mv /tmp/ssh_config ~/.ssh/config && \
     mv /tmp/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
     mv /tmp/slaves $HADOOP_HOME/etc/hadoop/slaves && \
     mv /tmp/start-hadoop.sh ~/start-hadoop.sh && \
-    mv /tmp/run-wordcount.sh ~/run-wordcount.sh && \
+    mv /tmp/run-hlca.sh ~/run-hlca.sh && \
     mv /tmp/block0.txt ~/block0.txt && \ 
     mv /tmp/img.txt ~/img.txt && \ 
     mv /tmp/img_parser.py ~/img_parser.py && \
-    mv /tmp/g2-hlca.pig ~/g2-hlca.pig.pig
+    mv /tmp/g2-hlca.pig ~/g2-hlca.pig
 
 RUN chmod +x ~/start-hadoop.sh && \
-    chmod +x ~/run-wordcount.sh && \
-    chmod +x ~/g2-hlca.pig.pig && \
+    chmod +x ~/run-hlca.sh && \
+    chmod +x ~/g2-hlca.pig && \
     chmod +x $HADOOP_HOME/sbin/start-dfs.sh && \
     chmod +x $HADOOP_HOME/sbin/start-yarn.sh 
 
